@@ -131,7 +131,7 @@ input[type=search] {
     border-radius: 5px;
 }
 
-input[type=submit] {
+button[type=submit] {
     background: white;
     color: grey;
     padding: 11px 10px;
@@ -140,7 +140,7 @@ input[type=submit] {
     vertical-align: middle;
 }
 
-input[type=submit]:hover {
+button[type=submit]:hover {
     cursor: pointer;
 }
 
