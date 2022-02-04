@@ -42,13 +42,11 @@ app.get("/summoner/:summonername", function (req, res) {
     
                                 if (champion[0] !== undefined) {
                                     var champs = champion[0]
-    
                                     var date = new Date(champs.lastPlayTime)
     
                                     getDataChampion(champs.championId, function (championsJson) {
                                         var c = [championsJson.name, champs.championLevel, champs.championPoints, date, championsJson.image.full]
     
-
                                         res.render("summoner", {
                                             version: latestVersion,
                                             summ: summ,
@@ -136,7 +134,6 @@ function getLastVersion(callback){
         }
     })
 }
-
 
 app.get("*", function (req, res) {
     res.render("404");
