@@ -2,4 +2,4 @@
 Busque informações de uma conta de League of Legends pelo nickname.
 
 # Imagem
-![Exemplo](https://i.imgur.com/kxsGlJe.png)
+![Exemplo](https://i.imgur.com/VcQc2mD.png)
