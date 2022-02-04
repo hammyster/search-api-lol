@@ -2,3 +2,4 @@
 * text=auto
 * linguist-vendored
 *.js linguist-vendored=false
+*.ejs linguist-vendored=false
