@@ -1,0 +1,107 @@
+<% include partials/head.ejs %>
+    <% include partials/navbar.ejs %>
+
+
+        <main class="wrapper">
+            <% var proficonurl="http://ddragon.leagueoflegends.com/cdn/12.3.1/img/profileicon/" + summ.profileIconId
+                + ".png" %>
+
+                <div class="info-title">
+                    <span class="level" title="Level">
+                        <%= summ.summonerLevel %>
+                    </span>
+                    <% if (league.length !==0) { %>
+                    <img class="border" title="Border" src="/imgs/Border_<%= league.tier %>.png">
+                    <% } %>
+                    <img class="icon" title="Icon" src="<%=proficonurl%>">
+                    <h1>
+                        <%= summ.name %>
+                    </h1>
+                </div>
+
+                <div class="tables">
+                    <% if (league.length !==0) { %>
+                        <div class="info-statistics">
+                            <div class="title">Informações do Elo</div>
+                            <div class="items">
+                                <div class="Medal tip tpd-delegation-uid-1" title="">
+                                    <img src="/imgs/Emblem_<%= league.tier %>.png" class="image">
+                                </div>
+                                <div class="info">
+                                    <div class="RankType">Ranqueada Solo</div>
+                                    <div class="TierRank">
+                                        <%= league.tier %>
+                                            <%= league.rank %>
+                                    </div>
+                                    <div class="TierInfo">
+                                        <span class="LeaguePoints">
+                                            <%= league.leaguePoints %> LP
+                                        </span> /
+                                        <span class="WinLose">
+                                            <span class="wins">
+                                                <%= league.wins %>V
+                                            </span>
+                                            <span class="losses">
+                                                <%= league.losses %>L
+                                            </span>
+                                            <br>
+                                            <% const winrate=league.wins / (league.wins + league.losses) * 100 %>
+                                                <span class="winratio">Taxa de Vitória <%= Math.round(winrate) %>
+                                                        %</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else { %>
+                            <div class="info-statistics">
+                                <div class="title">Informações do Elo</div>
+                                <div class="items">
+                                    <div class="Medal tip tpd-delegation-uid-1" title="">
+                                        <img class="unranked-image" src="/imgs/uranked.png">
+                                    </div>
+                                    <div class="TierRankInfo">
+                                        <div class="unranked">Unranked</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+
+                            <% if (champion[0] !==0) { %>
+                                <div class="info-champion">
+                                    <div class="title">Campeão com mais maestria</div>
+                                    <div class="items">
+                                        <div class="Medal tip tpd-delegation-uid-1" title="">
+                                            <img src="http://ddragon.leagueoflegends.com/cdn/<%= version %>/img/champion/<%= champion[4] %>"
+                                                class="image">
+                                        </div>
+                                        <div class="info">
+                                            <div class="RankType"><%= champion[0] %> - Maestria
+                                                <%= champion[1] %>
+                                            </div>
+                                            <div class="TierRank">
+                                                Pontos de Maestria:
+                                                <%= Intl.NumberFormat().format(champion[2]) %>
+                                            </div>
+                                            <div class="TierRank">
+                                                Última vez jogado:
+                                                <%= champion[3].getDate() + "/" + (champion[3].getMonth()+1)+ "/" + champion[3].getFullYear() %>
+                                            </div>
+                                            <div class="TierInfo">
+                                                <span class="LeaguePoints">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            <% } %>
+
+
+                </div>
+
+
+        </main>
+
+
+
+        <% include partials/footer.ejs %>
