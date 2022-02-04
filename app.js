@@ -37,9 +37,6 @@ app.get("/summoner/:summonername", function (req, res) {
                         getChampionsMastery(summ.id, function (responseChampions) {
                             var champion = JSON.parse(responseChampions);
                             if (champion !== 404) {
-    
-                                console.log(champion[0])
-    
                                 if (champion[0] !== undefined) {
                                     var champs = champion[0]
                                     var date = new Date(champs.lastPlayTime)
