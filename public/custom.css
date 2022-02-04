@@ -233,7 +233,7 @@ table * {
     background-size: 400% 400%;
     animation: gradient 15s ease;
     border-radius: 2px;
-    width: 40%;
+    width: 50%;
     height: 170px;
     max-height: 170px;
     color: #fff;
@@ -279,7 +279,7 @@ table * {
     background-size: 400% 400%;
     animation: gradient 15s ease;
     border-radius: 2px;
-    width: 100%;
+    width: 50%;
     height: 170px;
     max-height: 170px;
     color: #fff;
